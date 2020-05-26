@@ -4,12 +4,15 @@ import time
  
 #GPIO SETUP
 channel = 21
+pumpPin = 2
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(channel, GPIO.IN)
+GPIO.setup(pumpPin, GPIO.OUT)
  
 def callback(channel):
         if GPIO.input(channel):
                 print "Water Detected!"
+                GPIO.output(pumpPin)
         else:
                 print "Water Detected!"
  
