@@ -12,7 +12,7 @@ GPIO.setup(pumpPin, GPIO.OUT)
 def callback(channel):
         if GPIO.input(channel):
                 print "Water Detected!"
-                GPIO.output(pumpPin)
+                GPIO.output(pumpPin, GPIO.HIGH)
         else:
                 print "Water Detected!"
  
